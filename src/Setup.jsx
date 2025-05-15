@@ -30,7 +30,7 @@ function Setup() {
 
       if (res.data.message?.toLowerCase().includes("setup")) {
         setSetupDone(true);
-        navigate("/email"); // will try to navigate, fallback button will show anyway
+// will try to navigate, fallback button will show anyway
       } else {
         console.error("⚠️ Unexpected response from server:", res.data);
         alert("Something went wrong. Try again.");
