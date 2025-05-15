@@ -30,6 +30,8 @@ function Setup() {
 
       if (res.data.message?.toLowerCase().includes("setup")) {
         setSetupDone(true);
+        window.location.href = "/email";
+
 // will try to navigate, fallback button will show anyway
       } else {
         console.error("⚠️ Unexpected response from server:", res.data);
