@@ -30,7 +30,7 @@ function Setup() {
 
       if (res.data.message?.toLowerCase().includes("setup")) {
         setSetupDone(true);
-        window.location.href = "/email";
+        
 
 // will try to navigate, fallback button will show anyway
       } else {
@@ -89,9 +89,10 @@ function Setup() {
       </form>
       {setupDone && (
         <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <button className="setup-button" onClick={() => navigate("/email")}>
-            Go to Emails →
+          <button className="setup-button" onClick={() => window.location.href = "/email"}>
+             Go to Emails →
           </button>
+
         </div>
       )}
     </div>
