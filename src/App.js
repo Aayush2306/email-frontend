@@ -16,11 +16,11 @@ function App() {
   const [initialChecked, setInitialChecked] = useState(false);
 
   useEffect(() => {
-    axios.get("https://email-backend-9um0.onrender.com/profile")
+    axios.get("https://email-backend-t791.onrender.com/profile")
       .then(res => {
         if (res.data && res.data.email) {
           setIsLoggedIn(true);
-          return axios.get("https://email-backend-9um0.onrender.com/api/check-setup");
+          return axios.get("https://email-backend-t791.onrender.com/api/check-setup");
         } else {
           throw new Error("Not logged in");
         }

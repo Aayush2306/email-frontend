@@ -34,7 +34,7 @@ function EmailDashboard() {
     (async () => {
       try {
         const profileRes = await axios.get(
-          "https://email-backend-9um0.onrender.com/profile",
+          "https://email-backend-t791.onrender.com/profile",
           {
             withCredentials: true,
           }
@@ -45,14 +45,14 @@ function EmailDashboard() {
       }
 
       const setupRes = await handleProtectedRequest(() =>
-        axios.get("https://email-backend-9um0.onrender.com/api/check-setup", {
+        axios.get("https://email-backend-t791.onrender.com/api/check-setup", {
           withCredentials: true,
         })
       );
       if (!setupRes?.data?.setup_complete) return navigate("/setup");
 
       const savedRes = await handleProtectedRequest(() =>
-        axios.get("https://email-backend-9um0.onrender.com/api/emails", {
+        axios.get("https://email-backend-t791.onrender.com/api/emails", {
           withCredentials: true,
         })
       );
@@ -61,13 +61,13 @@ function EmailDashboard() {
       setLoading(false);
 
       await handleProtectedRequest(() =>
-        axios.get("https://email-backend-9um0.onrender.com/api/fetch-emails", {
+        axios.get("https://email-backend-t791.onrender.com/api/fetch-emails", {
           withCredentials: true,
         })
       );
 
       const refreshRes = await handleProtectedRequest(() =>
-        axios.get("https://email-backend-9um0.onrender.com/api/emails", {
+        axios.get("https://email-backend-t791.onrender.com/api/emails", {
           withCredentials: true,
         })
       );
@@ -80,7 +80,7 @@ function EmailDashboard() {
     setSummary("Loading...");
     const res = await handleProtectedRequest(() =>
       axios.get(
-        "https://email-backend-9um0.onrender.com/api/summarize-important",
+        "https://email-backend-t791.onrender.com/api/summarize-important",
         {
           withCredentials: true,
         }
@@ -90,7 +90,7 @@ function EmailDashboard() {
   };
 
   const handleLogout = async () => {
-    await axios.get("https://email-backend-9um0.onrender.com/logout", {
+    await axios.get("https://email-backend-t791.onrender.com/logout", {
       withCredentials: true,
     });
     window.location.href = "/";
@@ -108,7 +108,7 @@ function EmailDashboard() {
   return (
     <div className="email-container">
       <div className="navbar">
-        <div className="navbar-left">ReplicaX</div>
+        <div className="navbar-left">Vibely</div>
         <div className="navbar-right">
           <button className="important-btn desktop" onClick={openSummaryModal}>
             Important

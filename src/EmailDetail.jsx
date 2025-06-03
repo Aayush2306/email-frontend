@@ -89,7 +89,7 @@ function EmailDetail() {
   useEffect(() => {
     const fetchEmail = async () => {
       const res = await handleProtectedRequest(() =>
-        axios.get(`https://email-backend-9um0.onrender.com/email/${id}`, {
+        axios.get(`https://email-backend-t791.onrender.com/api/email/${id}`, {
           withCredentials: true,
         })
       );
@@ -99,7 +99,7 @@ function EmailDetail() {
     const fetchReply = async () => {
       const res = await handleProtectedRequest(() =>
         axios.get(
-          `https://email-backend-9um0.onrender.com/generate-reply/${id}`,
+          `https://email-backend-t791.onrender.com/api/generate-reply/${id}`,
           {
             withCredentials: true,
           }
@@ -123,7 +123,7 @@ function EmailDetail() {
     setSending(true);
     const res = await handleProtectedRequest(() =>
       axios.post(
-        "https://email-backend-9um0.onrender.com/send-reply",
+        "https://email-backend-t791.onrender.com/send-reply",
         { email_id: id, reply },
         { withCredentials: true }
       )

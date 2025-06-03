@@ -23,16 +23,15 @@ function Setup() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://email-backend-9um0.onrender.com/api/setup",
+        "https://email-backend-t791.onrender.com/api/setup",
         { tone, preferences },
         { withCredentials: true }
       );
 
       if (res.data.message?.toLowerCase().includes("setup")) {
         setSetupDone(true);
-        
 
-// will try to navigate, fallback button will show anyway
+        // will try to navigate, fallback button will show anyway
       } else {
         console.error("⚠️ Unexpected response from server:", res.data);
         alert("Something went wrong. Try again.");
@@ -89,10 +88,12 @@ function Setup() {
       </form>
       {setupDone && (
         <div style={{ marginTop: "20px", textAlign: "center" }}>
-          <button className="setup-button" onClick={() => window.location.href = "/email"}>
-             Go to Emails →
+          <button
+            className="setup-button"
+            onClick={() => (window.location.href = "/email")}
+          >
+            Go to Emails →
           </button>
-
         </div>
       )}
     </div>
